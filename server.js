@@ -1,17 +1,23 @@
+const htmlRoutes = require('./server/routes/htmlRoutes');
+const apiRoutes = require('./server/routes/apiRoutes');
+
 // Dependencies
 // =============================================================
 const express = require('express');
-const path = require('path');
+// const path = require('path');
 
 // Sets up the Express App
 // =============================================================
 const app = express();
+htmlRoutes(app);
+apiRoutes(app);
 const PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
+<<<<<<< HEAD
 // Routes
 // =============================================================
 
@@ -44,18 +50,18 @@ app.get('/api/tablesBooked', function(req, res) {
 //   return res.json(false);
 // });
 
-// Create New tablesBooked - takes in JSON input
-app.post('/api/tablesBooked', function(req, res) {
-  // req.body hosts is equal to the JSON post sent from the user
-  // This works because of our body parsing middleware
-  const newCustomer = req.body;
+// // Create New tablesBooked - takes in JSON input
+// app.post('/api/tablesBooked', function(req, res) {
+//   // req.body hosts is equal to the JSON post sent from the user
+//   // This works because of our body parsing middleware
+//   const newCustomer = req.body;
 
-  console.log(newCustomer);
+//   console.log(newCustomer);
 
-  tablesBooked.push(newCustomer);
+//   tablesBooked.push(newCustomer);
 
-  res.json(newCustomer);
-});
+//   res.json(newCustomer);
+// });
 
 // Starts the server to begin listening
 // =============================================================

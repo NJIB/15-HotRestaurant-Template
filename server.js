@@ -24,10 +24,10 @@ app.use(express.json());
 //   res.sendFile(path.join(__dirname, 'add.html'));
 // });
 
-// // Displays all customers
-// app.get('/api/tablesBooked', function(req, res) {
-//   return res.json(tablesBooked);
-// });
+// Displays all customers
+app.get('/api/tablesBooked', function(req, res) {
+  return res.json(tablesBooked);
+});
 
 // // Displays a single character, or returns false
 // app.get('/api/tablesBooked/:character', function(req, res) {
